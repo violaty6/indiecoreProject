@@ -66,6 +66,7 @@ public class CardDisplay : MonoBehaviour, IPointerEnterHandler, IPointerExitHand
         selected = false;
         ToTheHand();
         if (!_preview) return;
+        transform.GetComponent<SortingGroup>().sortingOrder = 5;
         DOTween.Kill(transform);
         CurHand.ThrowCard(this.gameObject);
         _isCardInitToGame = true;
@@ -76,7 +77,7 @@ public class CardDisplay : MonoBehaviour, IPointerEnterHandler, IPointerExitHand
         transform.DORotateQuaternion(Quaternion.Euler(transform.localRotation.x, transform.localRotation.y, 0), 0.2f);
         transform.DOScale(transform.localScale+(Vector3.one/50),0.1f);
         transform.SetAsLastSibling();
-        transform.GetComponent<SortingGroup>().sortingOrder = 1;
+        transform.GetComponent<SortingGroup>().sortingOrder = 20;
     }
     private void ToTheHand()
     {
@@ -84,7 +85,7 @@ public class CardDisplay : MonoBehaviour, IPointerEnterHandler, IPointerExitHand
         transform.DOLocalMove(cardHandLocation, 0.25f).SetEase(Ease.InBack).OnComplete(() => toHand = false) ;
         transform.DORotateQuaternion(cardHandRotation, 0.2f);
         transform.DOScale(0.4f, 0.1f);
-        transform.GetComponent<SortingGroup>().sortingOrder = 0;
+        transform.GetComponent<SortingGroup>().sortingOrder = 10;
     }
     private void OnDisable()
     { 

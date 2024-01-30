@@ -8,6 +8,7 @@ public class Card : ScriptableObject
     public string cardName;
     public string cardDesc;
     public Sprite cardSprite;
+    public Sprite cardBackSprite;
 
 }
 

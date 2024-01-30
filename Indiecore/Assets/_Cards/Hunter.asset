@@ -10,8 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0df7d241d3e082d4193cd2ced487ea35, type: 3}
-  m_Name: Test1
+  m_Name: Hunter
   m_EditorClassIdentifier: 
-  cardName: Bekir
+  cardName: Hunter
   cardDesc: "moderat\xF6r"
-  cardSprite: {fileID: 21300000, guid: f91843d084f90a24395df53a57ef2d76, type: 3}
+  cardSprite: {fileID: 21300000, guid: 928e1ef123e9a6d4a856139898491ab9, type: 3}
+  cardBackSprite: {fileID: 0}

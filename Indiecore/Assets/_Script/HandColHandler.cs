@@ -13,16 +13,20 @@ public class HandColHandler : MonoBehaviour
     }
     private void OnTriggerEnter2D(Collider2D other)
     {
-        bool checkisGameObj = other.GetComponent<CardDisplay>()._isCardInitToGame;
-        if (!checkisGameObj)
+        CardDisplay display = other.GetComponent<CardDisplay>();
+        if (display == null) return; 
+        bool checkisGameObj = display._isCardInitToGame;
+        if (!checkisGameObj && checkisGameObj!=null)
         {
             other.GetComponent<CardDisplay>()._preview = false;
         }
     }
     private void OnTriggerExit2D(Collider2D other)
     {
+        CardDisplay display = other.GetComponent<CardDisplay>();
+        if (display == null) return; 
         bool checkisGameObj = other.GetComponent<CardDisplay>()._isCardInitToGame;
-        if (checkisGameObj)
+        if (!checkisGameObj && checkisGameObj!=null)
         {
             other.GetComponent<CardDisplay>()._preview = true;
         }

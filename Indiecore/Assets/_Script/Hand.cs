@@ -74,9 +74,11 @@ public class Hand : MonoBehaviour
     public void ThrowCard(GameObject card)
     {
         CurHand.Remove(card);
-
-        Destroy(card);
+        card.transform.parent = null;
+        Destroy(card.GetComponent<CardDisplay>());
+        card.AddComponent<CardGame>();
         ArrangeCardsInCircle(CurHand);
+        
     }
     public void DrawCard()
     {
