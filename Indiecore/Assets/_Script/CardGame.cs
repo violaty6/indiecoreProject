@@ -30,7 +30,7 @@ public class CardGame : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
     }
     private void InitializeFeedBack()
     {
-        transform.DOScale(0.4f, 0.1f).SetEase(Ease.InOutBack);
+        transform.DOScale(0.3f, 0.1f).SetEase(Ease.InOutBack);
         transform.DORotateQuaternion(Quaternion.Euler(transform.localRotation.x, transform.localRotation.y, 0), 0.2f);
     }
     private void FlipCard()
